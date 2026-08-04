@@ -1,0 +1,341 @@
+* {
+  box-sizing: border-box;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+body {
+  margin: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+/* بک گراند شب + ماه */
+
+.background {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: radial-gradient(
+    circle at 70% 20%,
+    #34345a,
+    #111124 40%,
+    #05050d 85%
+  );
+
+  color: white;
+}
+
+/* ماه محو */
+
+.background::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+
+  height: 260px;
+
+  top: 40px;
+
+  right: 40px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle at 35% 35%, #ffffff, #d8d8e8 45%, #9999bb);
+
+  opacity: 0.14;
+
+  filter: blur(2px);
+
+  box-shadow: 0 0 100px 40px rgba(255, 255, 255, 0.08);
+
+  animation: moonMove 8s infinite alternate;
+}
+
+@keyframes moonMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(15px);
+  }
+}
+
+/* کارت اصلی */
+
+.container {
+  width: 90%;
+
+  max-width: 600px;
+
+  padding: 35px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 35px;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+
+  z-index: 5;
+}
+
+h1 {
+  color: #ffd77a;
+
+  font-size: 30px;
+}
+
+p {
+  color: #ddd;
+
+  font-size: 18px;
+
+  line-height: 2;
+}
+
+/* شخصیت ها */
+
+.person {
+  font-size: 80px;
+
+  animation: floating 3s infinite alternate;
+}
+
+.person span {
+  display: block;
+
+  font-size: 18px;
+
+  color: #ffd77a;
+}
+
+@keyframes floating {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+/* جعبه */
+
+.gift {
+  width: 180px;
+
+  height: 160px;
+
+  margin: 35px auto;
+
+  position: relative;
+
+  cursor: pointer;
+}
+
+.box {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 180px;
+
+  height: 120px;
+
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+
+  border-radius: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 80px;
+
+  box-shadow: 0 20px 50px #0008;
+}
+
+.lid {
+  position: absolute;
+
+  top: 15px;
+
+  width: 190px;
+
+  height: 45px;
+
+  background: #c084fc;
+
+  border-radius: 20px;
+
+  z-index: 2;
+
+  transition: 1s;
+}
+
+.open .lid {
+  transform: translateY(-100px) rotate(-25deg);
+}
+
+button {
+  border: none;
+
+  padding: 15px 40px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #ffd166, #ff9f1c);
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* هیفا بعد از باز شدن */
+
+.hifa {
+  animation: appear 1.5s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+
+    transform: scale(0.3);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+/* کیک */
+
+.cake {
+  font-size: 120px;
+
+  animation: cakeMove 2s infinite alternate;
+}
+
+@keyframes cakeMove {
+  from {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+#message {
+  margin-top: 25px;
+
+  min-height: 220px;
+
+  font-size: 19px;
+
+  line-height: 2.3;
+
+  color: #eee;
+}
+
+.sender {
+  margin-top: 20px;
+
+  color: #ffd77a;
+}
+
+/* ستاره های کلیکی */
+
+.click-star {
+  position: absolute;
+
+  color: #ffffffd3;
+
+  font-size: 18px;
+
+  pointer-events: none;
+
+  animation: starPop 1s forwards;
+}
+
+@keyframes starPop {
+  0% {
+    transform: scale(0);
+
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.5);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+
+    opacity: 0;
+  }
+}
+
+/* موبایل */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .person {
+    font-size: 60px;
+  }
+
+  .cake {
+    font-size: 90px;
+  }
+
+  #message {
+    font-size: 16px;
+  }
+
+  .gift {
+    transform: scale(0.8);
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy Birthday Hifa 🎂</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="stars"></div>
+
+      <div class="container">
+        <!-- شروع -->
+
+        <div id="intro">
+          <div class="person">
+            👩🏻
+
+            <span> اسما </span>
+          </div>
+
+          <h1>✨ یه سورپرایز برای هیفا ✨</h1>
+
+          <p>یه چیزی برات آماده کردم...</p>
+
+          <div class="gift" id="gift">
+            <div class="lid"></div>
+
+            <div class="box">🎁</div>
+          </div>
+
+          <button id="open">باز کردن هدیه ✨</button>
+        </div>
+
+        <!-- پایان جعبه -->
+
+        <div id="birthday" class="hidden">
+          <div class="person hifa">
+            👧🏻
+
+            <span> هیفا </span>
+          </div>
+
+          <div class="cake">🎂</div>
+
+          <h1>🎉 تولدت مبارک هیفا 🎉</h1>
+
+          <div id="message"></div>
+
+          <div class="sender">با عشق، اسما 🤍</div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="openSound" src="sounds/open.mp3"></audio>
+
+    <audio id="birthdaySound" src="sounds/birthday.mp3"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
